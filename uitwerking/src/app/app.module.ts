@@ -7,10 +7,6 @@ import { ProfileModule} from './profile/profile.module'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
-
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,
