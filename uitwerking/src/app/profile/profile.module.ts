@@ -4,23 +4,28 @@ import { RouterModule} from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { ProfileListComponent } from './profile-list/profile-list.component';
+import { ProfileDetailsComponent } from './profile-details/profile-details.component';
 
-import { ProfileFilterPipe } from './profile-list/profile-filter.pipe'
+import { ProfileFilterPipe } from './profile-list/profile-filter.pipe';
+
+import { ProfileService } from './profile.service';
 
 @NgModule({
-    declarations:[
+    declarations:
+    [
         ProfileListComponent,
+        ProfileDetailsComponent,
         ProfileFilterPipe
     ],
-    imports:[
+    imports:
+    [
         SharedModule,
         RouterModule.forChild([
             { path: 'profiles', component: ProfileListComponent },
+            { path: 'profile/:id', component: ProfileDetailsComponent }
           ])
     ],
-    exports:[],
-    providers:[]
+    exports: [],
+    providers: [ProfileService]
 })
-export class ProfileModule {
-
-}
+export class ProfileModule { }

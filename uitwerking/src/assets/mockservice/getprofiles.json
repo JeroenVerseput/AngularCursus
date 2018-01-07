@@ -1,0 +1,21 @@
+[ {
+    "id": 1,
+    "name": "Jeroen Verseput",
+    "dateOfBirth": "1990-07-25",
+    "email": "joen100@gmail.com",
+    "phoneNumber": "0612345678"
+},
+{
+    "id": 2,
+    "name": "Jan Jansen",
+    "dateOfBirth": "1969-10-03",
+    "email": "Bob@jansen.nl",
+    "phoneNumber": "0612345679"
+},
+{
+    "id": 3,
+    "name": "Mike Jansen",
+    "dateOfBirth": "1969-10-03",
+    "email": "Bob@jansen.nl",
+    "phoneNumber": "0612345679"
+}]

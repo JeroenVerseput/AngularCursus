@@ -4,7 +4,7 @@
         <button class="btn btn-outline-secondary" type="button">Search</button>
     </div>
 </div>
-<table class="table">
+<table class="table" *ngIf="profiles && profiles.length > 0">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -16,9 +16,12 @@
     <tbody>
       <tr *ngFor="let profile of profiles | profileFilter:listFilter">
         <th scope="row">{{profile.id}}</th>
-        <td>{{profile.name}}</td>
+        <td><a [routerLink]="['/profile', profile.id]">{{profile.name}}</a></td>
         <td>{{profile.email}}</td>
         <td>{{profile.phoneNumber}}</td>
       </tr>
     </tbody>
   </table>
+  <div *ngIf="!profiles || profiles.length === 0">
+    Nothing found
+  </div>

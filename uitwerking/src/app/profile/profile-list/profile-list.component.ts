@@ -1,26 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProfileService, IProfile } from '../profile.service';
 
 @Component({
-    selector: 'app-profile-list',
     templateUrl: './profile-list.component.html'
 })
-export class ProfileListComponent {
+export class ProfileListComponent implements OnInit {
     listFilter: string;
-    
-    profiles: any[] = [
-        {
-            id: 1,
-            name: "Jeroen Verseput",
-            dateOfBirth: new Date(1990, 7, 25),
-            email: 'joen100@gmail.com',
-            phoneNumber: "0612345678"
-        },
-        {
-            id: 2,
-            name: "Jan Jansen",
-            dateOfBirth: new Date(1969, 10, 3),
-            email: 'Bob@jansen.nl',
-            phoneNumber: "0612345679"
-        }
-    ]
+    profiles: IProfile[];
+
+    constructor(private profileService: ProfileService) { }
+
+    ngOnInit() {
+        this.profileService.getProfiles().subscribe( profiles => {
+            this.profiles = profiles;
+        });
+    }
 }
