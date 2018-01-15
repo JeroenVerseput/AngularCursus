@@ -9,6 +9,7 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
 import { ProfileFilterPipe } from './profile-list/profile-filter.pipe';
 
 import { ProfileService } from './profile.service';
+import { ProfileDetailsGuardService } from './profile-details/profile-details-guard.service';
 
 @NgModule({
     declarations:
@@ -22,10 +23,10 @@ import { ProfileService } from './profile.service';
         SharedModule,
         RouterModule.forChild([
             { path: 'profiles', component: ProfileListComponent },
-            { path: 'profile/:id', component: ProfileDetailsComponent }
+            { path: 'profile/:id', canActivate: [ProfileDetailsGuardService], component: ProfileDetailsComponent }
           ])
     ],
     exports: [],
-    providers: [ProfileService]
+    providers: [ProfileService, ProfileDetailsGuardService]
 })
 export class ProfileModule { }

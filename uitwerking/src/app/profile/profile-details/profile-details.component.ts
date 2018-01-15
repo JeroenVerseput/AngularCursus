@@ -22,4 +22,8 @@ export class ProfileDetailsComponent implements OnInit {
             });
         }
     }
+
+    onBack(): void {
+        this.router.navigate(['/profiles'])
+    }
 }
