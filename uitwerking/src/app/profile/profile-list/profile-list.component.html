@@ -1,13 +1,20 @@
+<br/>
+
 <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2" [(ngModel)]='listFilter'>
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Search</button>
-    </div>
 </div>
+
+<div class="input-group-append">
+  <button class="btn btn-outline-secondary" type="button" (click)='togglePhoto()'>{{showPhoto ? "Verberg foto": "Toon foto"}}</button>
+</div>
+
+<br/>
+
 <table class="table" *ngIf="profiles && profiles.length > 0">
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th></th>
         <th scope="col">Naam</th>
         <th scope="col">Email</th>
         <th scope="col">Telefoonnummer</th>
@@ -15,10 +22,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let profile of filteredProfiles">
-        <th scope="row">{{profile.id}}</th>
+        <td scope="row">{{profile.id}}</td>
+        <td><img class='small-photo' [src]='profile.photourl' *ngIf='showPhoto'/></td>
         <td><a [routerLink]="['/profile', profile.id]">{{profile.name}}</a></td>
-        <td>{{profile.email}}</td>
-        <td>{{profile.phoneNumber}}</td>
+        <td><app-mail-component [email]='profile.email' (output)='emailClicked(profile.id, $event)'></app-mail-component></td>
+        <td>{{profile.phoneNumber | convertToSpaces : '-'}}</td>
       </tr>
     </tbody>
   </table>

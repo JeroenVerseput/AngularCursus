@@ -1,21 +1,22 @@
 [ {
     "id": 1,
+    "photourl": "https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/083/169/0d68930.jpg",
     "name": "Jeroen Verseput",
     "dateOfBirth": "1990-07-25",
     "email": "joen100@gmail.com",
-    "phoneNumber": "0612345678"
+    "phoneNumber": "06-12345678"
 },
 {
     "id": 2,
     "name": "Jan Jansen",
     "dateOfBirth": "1969-10-03",
     "email": "Bob@jansen.nl",
-    "phoneNumber": "0612345679"
+    "phoneNumber": "06-12345679"
 },
 {
     "id": 3,
     "name": "Mike Jansen",
     "dateOfBirth": "1969-10-03",
     "email": "Bob@jansen.nl",
-    "phoneNumber": "0612345679"
+    "phoneNumber": "06-12345679"
 }]

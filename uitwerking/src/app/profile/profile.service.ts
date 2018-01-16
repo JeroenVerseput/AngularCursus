@@ -28,6 +28,7 @@ export class ProfileService {
 
 export interface IProfile {
     id: number;
+    photourl: string;
     name: string;
     dateOfBirth: Date;
     email: string;
