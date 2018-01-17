@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService, IProfile } from '../profile.service';
+import { ProfileService } from '../profile.service';
+import { IProfile } from '../profile.model';
 
 @Component({
     templateUrl: './profile-list.component.html',
