@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService, IProfile } from '../profile.service';
 
-
 @Component({
     templateUrl: './profile-details.component.html'
 })
@@ -24,6 +23,6 @@ export class ProfileDetailsComponent implements OnInit {
     }
 
     onBack(): void {
-        this.router.navigate(['/profiles'])
+        this.router.navigate(['/profiles']);
     }
 }

@@ -33,7 +33,7 @@ export class ProfileListComponent implements OnInit {
     performFilter(filterBy: string): IProfile[] {
         filterBy = filterBy.toLocaleLowerCase();
         return this.profiles.filter((profile: IProfile) =>
-            profile.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+            profile.firstname.concat(profile.surname).toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
 
     togglePhoto(): void {

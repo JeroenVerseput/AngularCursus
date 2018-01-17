@@ -1,49 +1,28 @@
-<div class="row">
-  <div class="col">
-    <p><span class='font-weight-bold'>Email:</span></p>
-    <p><span class='font-weight-bold'>Voornaam:</span></p>
-    <p><span class='font-weight-bold'>Achternaam:</span></p>
-    <p><span class='font-weight-bold'>Geboortedatum:</span></p>
-    <p><span class='font-weight-bold'>Geboorte land:</span></p>
-    <p><span class='font-weight-bold'>Geslacht:</span></p>
-    <p><span class='font-weight-bold'>Nationaliteit(en):</span></p>
-    <p><span class='font-weight-bold'>Woonplaats:</span></p>
-    <p><span class='font-weight-bold'>Huwelijks staat:</span></p>
-  </div>
-  <div class="col">
-    <img width='500px' src="https://thenypost.files.wordpress.com/2016/04/trumpchad.jpg?quality=90&strip=all">
-  </div>
+<br/>
+
+<div class="input-group-append">
+  <button class="btn btn-outline-secondary" type="button" (click)='onBack()' >Terug</button>
 </div>
 
-<div class="row">
-    <div class="col">
-      <h1>Werkervaringen</h1>
-      <div class="row">
-          <div class="col">
-            <span class='font-weight-bold'>Functie</span>
-          </div>
-          <div class="col">
-              <span class='font-weight-bold'>Werkgever</span>
-          </div>
-          <div class="col">
-              <span class='font-weight-bold'>periode</span>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col">
-            Ontwikkelaar
-          </div>
-          <div class="col">
-            Topicus
-          </div>
-          <div class="col">
-            2014 - heden
-          </div>
-      </div>
-    </div>
+<br/>
 
-    <div class="col">
-      <h1>Hobbies</h1>
-    </div>
-    
+<div class="row">
+  <div class="col">
+
+    <h2>Persoonlijk informatie</h2>
+    <br/>
+
+    <p><span class='font-weight-bold'>Voornaam:</span> {{profile.firstname}}</p>
+    <p><span class='font-weight-bold'>Achternaam:</span> {{profile.surname}}</p>
+    <p><span class='font-weight-bold'>Geboortedatum:</span> {{profile.dateOfBirth | date : 'dd-MM-yyyy'}}</p>
+
+    <h2>Contact informatie</h2>
+    <br/>
+
+    <p><span class='font-weight-bold'>Email:</span> <app-mail-component [email]='profile.email'></app-mail-component></p>
+    <p><span class='font-weight-bold'>Telefoonnummer:</span> {{profile.phoneNumber | convertToSpaces: '-' }}</p>
   </div>
+  <div class="col">
+    <img width='500px' [src]='profile.photourl'>
+  </div>
+</div>

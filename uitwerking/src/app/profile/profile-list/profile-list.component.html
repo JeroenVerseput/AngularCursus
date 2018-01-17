@@ -24,7 +24,7 @@
       <tr *ngFor="let profile of filteredProfiles">
         <td scope="row">{{profile.id}}</td>
         <td><img class='small-photo' [src]='profile.photourl' *ngIf='showPhoto'/></td>
-        <td><a [routerLink]="['/profile', profile.id]">{{profile.name}}</a></td>
+        <td><a [routerLink]="['/profile', profile.id]">{{profile.firstname }} {{profile.surname }}</a></td>
         <td><app-mail-component [email]='profile.email' (output)='emailClicked(profile.id, $event)'></app-mail-component></td>
         <td>{{profile.phoneNumber | convertToSpaces : '-'}}</td>
       </tr>
