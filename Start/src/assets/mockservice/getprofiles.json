@@ -1,0 +1,20 @@
+[ {
+    "id": 1,
+    "photourl": "https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/083/169/0d68930.jpg",
+    "firstname": "Jeroen",
+    "surname": "Verseput",
+    "dateOfBirth": "1990-07-25",
+    "jobtitle": "Software Engineer",
+    "email": "joen100@gmail.com",
+    "phoneNumber": "06-12345678"
+},
+{
+    "id": 2,
+    "photourl": "https://pbs.twimg.com/profile_images/633272072236605440/5_3dPqBM.jpg",
+    "firstname": "Jan",
+    "surname": "Jansen",
+    "dateOfBirth": "1969-10-03",
+    "jobtitle": "Software Engineer",
+    "email": "Bob@jansen.nl",
+    "phoneNumber": "06-12345679"
+}]
