@@ -30,8 +30,6 @@ var __asyncGenerator;
 var __asyncDelegator;
 var __asyncValues;
 var __makeTemplateObject;
-var __importStar;
-var __importDefault;
 (function (factory) {
     var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
     if (typeof define === "function" && define.amd) {
@@ -207,18 +205,6 @@ var __importDefault;
         return cooked;
     };
 
-    __importStar = function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-        result["default"] = mod;
-        return result;
-    };
-
-    __importDefault = function (mod) {
-        return (mod && mod.__esModule) ? mod : { "default": mod };
-    };
-
     exporter("__extends", __extends);
     exporter("__assign", __assign);
     exporter("__rest", __rest);
@@ -236,6 +222,4 @@ var __importDefault;
     exporter("__asyncDelegator", __asyncDelegator);
     exporter("__asyncValues", __asyncValues);
     exporter("__makeTemplateObject", __makeTemplateObject);
-    exporter("__importStar", __importStar);
-    exporter("__importDefault", __importDefault);
 });
