@@ -13,9 +13,9 @@ export class ProfileDetailsComponent implements OnInit {
     constructor(private route: ActivatedRoute, private router: Router, private profileService: ProfileService) { }
 
     ngOnInit() {
-        const param = this.route.snapshot.paramMap.get('id');
-        if (param) {
-            const id = +param;
+        const paramid = this.route.snapshot.paramMap.get('id');
+        if (paramid) {
+            const id = +paramid;
             this.profileService.getProfile(id).subscribe(profile => {
                 console.log(profile);
                 this.profile = profile;
