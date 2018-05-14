@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
+
+import { Observable, throwError } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
 import { IProfile } from './profile.model';
 
@@ -13,16 +11,16 @@ export class ProfileService {
     constructor(private http: HttpClient) { }
 
     getProfiles(): Observable<IProfile[]> {
-        return this.http.get<IProfile[]>('/assets/mockservice/getprofiles.json')
-            .do(data => console.log('data recieved: ' + JSON.stringify(data)))
-            .catch(this.handleError);
+        return this.http.get<IProfile[]>('/assets/mockservice/getprofiles.json').pipe(
+            catchError(this.handleError),
+            tap(data => console.log('data recieved: ' + JSON.stringify(data))));
     }
 
     getProfile(id: number): Observable<IProfile> {
-        return this.getProfiles().map((profiles: IProfile[]) => profiles.find(p => p.id === id));
+        return this.getProfiles().pipe(map((profiles: IProfile[]) => profiles.find(p => p.id === id)));
     }
 
     private handleError( error: HttpErrorResponse) {
-        return Observable.throw('error getProfiles');
+        return throwError('error getProfiles');
     }
 }
