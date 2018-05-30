@@ -1,20 +1,30 @@
 [ {
     "id": 1,
-    "photourl": "https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/083/169/0d68930.jpg",
-    "firstname": "Jeroen",
-    "surname": "Verseput",
+    "photourl": "https://www.wbkidsgo.com/Portals/4/Images/Content/Characters/Bugs%20Bunny/bugsbunny-body.png",
+    "firstname": "Bugs",
+    "surname": "Bunny",
     "dateOfBirth": "1990-07-25",
-    "jobtitle": "Software Engineer",
-    "email": "joen100@gmail.com",
+    "jobtitle": "Cartoon karakter",
+    "email": "bugs.bunny@mail.com",
     "phoneNumber": "06-12345678"
 },
 {
     "id": 2,
-    "photourl": "https://pbs.twimg.com/profile_images/633272072236605440/5_3dPqBM.jpg",
-    "firstname": "Jan",
-    "surname": "Jansen",
+    "photourl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png",
+    "firstname": "Daffy",
+    "surname": "Duck",
     "dateOfBirth": "1969-10-03",
-    "jobtitle": "Software Engineer",
-    "email": "Bob@jansen.nl",
+    "jobtitle": "Cartoon karakter",
+    "email": "daffy.duck@mail.nl",
+    "phoneNumber": "06-12345679"
+},
+{
+    "id": 3,
+    "photourl": "https://vignette.wikia.nocookie.net/spongebobsquarepants/images/e/e8/Patrick_Ster.png/revision/latest?cb=20120928121126&path-prefix=nl",
+    "firstname": "Patrick",
+    "surname": "Star",
+    "dateOfBirth": "1969-10-03",
+    "jobtitle": "Werkloos",
+    "email": "daffy.duck@mail.nl",
     "phoneNumber": "06-12345679"
 }]
