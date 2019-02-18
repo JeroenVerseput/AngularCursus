@@ -7,15 +7,12 @@ export class VirtualTimeScheduler extends AsyncScheduler {
         this.frame = 0;
         this.index = -1;
     }
-    /**
-     * Prompt the Scheduler to execute all of its queued actions, therefore
-     * clearing its queue.
-     * @return {void}
-     */
     flush() {
         const { actions, maxFrames } = this;
         let error, action;
-        while ((action = actions.shift()) && (this.frame = action.delay) <= maxFrames) {
+        while ((action = actions[0]) && action.delay <= maxFrames) {
+            actions.shift();
+            this.frame = action.delay;
             if (error = action.execute(action.state, action.delay)) {
                 break;
             }
@@ -29,11 +26,6 @@ export class VirtualTimeScheduler extends AsyncScheduler {
     }
 }
 VirtualTimeScheduler.frameTimeFactor = 10;
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
 export class VirtualAction extends AsyncAction {
     constructor(scheduler, work, index = scheduler.index += 1) {
         super(scheduler, work);
@@ -48,10 +40,6 @@ export class VirtualAction extends AsyncAction {
             return super.schedule(state, delay);
         }
         this.active = false;
-        // If an action is rescheduled, we save allocations by mutating its state,
-        // pushing it to the end of the scheduler queue, and recycling the action.
-        // But since the VirtualTimeScheduler is used for testing, VirtualActions
-        // must be immutable so they can be inspected later.
         const action = new VirtualAction(this.scheduler, this.work);
         this.add(action);
         return action.schedule(state, delay);
